@@ -1,0 +1,12 @@
+{
+  "name": "@allnulled/triggers-class",
+  "version": "1.0.0",
+  "description": "Register and emit async triggers using asterisks, names, priority and parameters through a less than 100 lines script.",
+  "main": "triggers-class.js",
+  "scripts": {
+    "test": "npx http-server -c-1 . -o test.html"
+  },
+  "keywords": ["triggers", "event-emitter"],
+  "author": "allnulled",
+  "license": "WTFPL"
+}
