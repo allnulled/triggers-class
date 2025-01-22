@@ -15,10 +15,11 @@
 
     static globMatch(patterns, list) {
       const matches = new Set();
+
       const regexes = patterns.map(pattern => {
-        const regexPattern = pattern
-          .replace(/[-/\\^$+?.()|[\]{}]/g, "\\$&")
-          .replace(/\*/g, ".*");
+        let regexPattern = pattern
+          .replace(/[-/\\^$+?.()|[\]{}]/g, "\\$&") // Escapa caracteres especiales
+          .replace(/\\\*/g, ".*")                 // '*' => cualquier cosa
         return new RegExp(`^${regexPattern}$`);
       });
       for (const item of list) {
@@ -29,8 +30,10 @@
           }
         }
       }
+
       return Array.from(matches);
     }
+
 
     all = {};
 
